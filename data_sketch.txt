@@ -1,0 +1,35 @@
+Users
+
+  name:string [unique, 4-12 chars, present]
+  email:string [unique, present]
+  password:string [6-16 chars, present]
+  id:integer
+  created_at:datetime
+  updated_at:datetime
+
+  has_many links
+  has_many comments
+
+Posts
+
+  title:string [unique, present]
+  body:text [present]
+  user_id:integer [present]
+  id:integer
+  created_at:datetime
+  updated_at:datetime
+
+  belongs_to user
+  has_many comments
+
+Comments
+
+  title:string [unique, present]
+  body:text [present]
+  author_id:integer [present]
+  id:integer
+  created_at:datetime
+  updated_at:datetime
+
+  belongs_to post
+  belongs_to link
